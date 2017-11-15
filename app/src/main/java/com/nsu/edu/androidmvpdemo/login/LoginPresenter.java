@@ -7,5 +7,7 @@ package com.nsu.edu.androidmvpdemo.login;
 public interface LoginPresenter {
     void validateCredentials(String username, String password);
 
+    void startRegisterActivity();
+
     void onDestroy();
 }

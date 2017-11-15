@@ -16,6 +16,7 @@ public class LoginPresenterImpl implements LoginPresenter, OnLoginFinishedListen
     public LoginPresenterImpl(LoginView loginView) {
         this.loginView = loginView;
         this.loginModel = new LoginModelImpl();
+        this.loginView.hideProgress();
     }
 
     @Override
@@ -25,6 +26,13 @@ public class LoginPresenterImpl implements LoginPresenter, OnLoginFinishedListen
         }
 
         loginModel.login(username, password, this);
+    }
+
+    @Override
+    public void startRegisterActivity() {
+        if (loginView != null) {
+            loginView.startRegisterActivity();
+        }
     }
 
     @Override

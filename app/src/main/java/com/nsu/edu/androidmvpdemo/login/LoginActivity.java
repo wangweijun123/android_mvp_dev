@@ -9,6 +9,7 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.nsu.edu.androidmvpdemo.R;
+import com.nsu.edu.androidmvpdemo.register.RegisterActivity;
 
 /**
  * Created by Anthony on 2016/2/15.
@@ -39,6 +40,7 @@ public class LoginActivity extends Activity implements LoginView, View.OnClickLi
         username = (EditText) findViewById(R.id.username);
         password = (EditText) findViewById(R.id.password);
         findViewById(R.id.button).setOnClickListener(this);
+        findViewById(R.id.register).setOnClickListener(this);
 
         presenter = new LoginPresenterImpl(this);
     }
@@ -77,8 +79,24 @@ public class LoginActivity extends Activity implements LoginView, View.OnClickLi
     }
 
     @Override
+    public void startRegisterActivity() {
+        startActivity(new Intent(this, RegisterActivity.class));
+    }
+
+    @Override
     public void onClick(View v) {
-        presenter.validateCredentials(username.getText().toString(), password.getText().toString());
+        switch (v.getId()) {
+            case R.id.button:
+                presenter.validateCredentials(username.getText().toString(), password.getText().toString());
+                break;
+            case R.id.register:
+                presenter.startRegisterActivity();
+                break;
+
+            default:
+                break;
+        }
+
     }
 
 }
