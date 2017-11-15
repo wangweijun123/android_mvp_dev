@@ -52,4 +52,9 @@ public class RegisterActivity extends Activity implements View.OnClickListener, 
     public void showUserNameError() {
         Toast.makeText(getApplicationContext(), "用户名错误", Toast.LENGTH_LONG).show();
     }
+
+    @Override
+    public void showRegisterSuccess() {
+        Toast.makeText(getApplicationContext(), "注册成功", Toast.LENGTH_LONG).show();
+    }
 }

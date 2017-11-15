@@ -6,4 +6,6 @@ package com.nsu.edu.androidmvpdemo.register;
 
 public interface RegisterView {
     void showUserNameError();
+
+    void showRegisterSuccess();
 }
