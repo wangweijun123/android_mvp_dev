@@ -21,7 +21,7 @@ public class RegisterPresenterImpl implements RegisterPresenter {
     @Override
     public void validate(String userName, String pwd, String pwdAgain) {
         if (TextUtils.isEmpty(userName)) {
-            registerView.showUserNameError(); 
+            registerView.showUserNameError();
             return;
         }
         registerModel.register(userName, pwd, new OnRegisterFinishedListener() {
