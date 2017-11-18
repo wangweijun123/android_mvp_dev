@@ -57,7 +57,7 @@ public class LoginPresenterImpl implements LoginPresenter, OnLoginFinishedListen
     }
 
     @Override
-    public void onSuccess() {
+    public void onSuccess(User u) {
         if (loginView != null) {
             loginView.navigateToHome();
         }

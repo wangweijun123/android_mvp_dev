@@ -10,5 +10,5 @@ public interface OnLoginFinishedListener {
 
     void onPasswordError();
 
-    void onSuccess();
+    void onSuccess(User u);
 }

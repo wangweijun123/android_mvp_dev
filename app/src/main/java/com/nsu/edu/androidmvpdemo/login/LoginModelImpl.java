@@ -23,7 +23,8 @@ public class LoginModelImpl implements LoginModel {
                     error = true;
                 }
                 if (!error){
-                    listener.onSuccess();
+                    User u = new User();
+                    listener.onSuccess(u);
                 }
             }
         }, 2000);
